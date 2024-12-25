@@ -1,8 +1,8 @@
 import React from "react"
-import { Layout } from "@/components"
+import { Layout, SEO } from "@/components"
 
 export default () => {
   return <Layout />
 }
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <SEO />

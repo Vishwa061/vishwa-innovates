@@ -3,6 +3,10 @@ import type { GatsbyConfig } from "gatsby"
 const config: GatsbyConfig = {
   siteMetadata: {
     title: "Vishwa Perera",
+    description:
+      "Vishwa Perera is a software engineer who builds simple solutions for complex problems.",
+    twitterUsername: "@VishwaP25503843",
+    image: "/icon.png", // refers to files in static folder
     siteUrl: "https://www.vishwainnovates.com",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
