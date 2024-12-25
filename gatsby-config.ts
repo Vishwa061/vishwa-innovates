@@ -6,7 +6,7 @@ const config: GatsbyConfig = {
     description:
       "Vishwa Perera is a software engineer who builds simple solutions for complex problems.",
     twitterUsername: "@VishwaP25503843",
-    image: "/icon.png", // refers to files in static folder
+    image: "/logo.png", // refers to files in static folder
     siteUrl: "https://www.vishwainnovates.com",
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
@@ -21,7 +21,7 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png",
+        icon: "src/images/logo.png",
       },
     },
     "gatsby-plugin-sharp",
