@@ -1,4 +1,5 @@
 import React, { ReactNode } from "react"
+import { Header, Footer } from "@/components"
 import * as classes from "./Layout.module.scss"
 
 interface LayoutProps {
@@ -6,5 +7,14 @@ interface LayoutProps {
 }
 
 export default ({ children }: LayoutProps) => {
-  return <h1 className={classes.test}>Hello World!!!</h1>
+  return (
+    <div id="root" className={classes.root}>
+      <a href="#content" className={classes.skip}>
+        Skip to main content
+      </a>
+      <Header />
+      <main id="content">{children}</main>
+      <Footer />
+    </div>
+  )
 }
