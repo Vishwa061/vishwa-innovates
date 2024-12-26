@@ -1,8 +1,12 @@
 .header {
   height: 100px;
-  padding: 25px 0px 25px 0px;
+  padding: 25px 50px 25px 50px;
   box-sizing: border-box;
   align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: var(--darker-navy-blue);
+  z-index: 1000;
 }
 
 .nav {
@@ -13,7 +17,6 @@
 }
 
 .nav-right-container {
-  color: whitesmoke;
   text-decoration-line: none;
   text-decoration-skip-ink: auto;
   text-decoration-style: solid;
@@ -30,9 +33,9 @@
 }
 
 .nav-link {
+  color: var(--light-text);
   display: block;
   margin-right: 5px;
   padding: 10px;
-  color: rgb(204, 214, 246);
   font-size: 14px;
 }
