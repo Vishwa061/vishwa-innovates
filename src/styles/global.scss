@@ -1,11 +1,14 @@
 :root {
   --dark-navy-blue: #091a2a;
   --light-blue: #38bdf8;
+  --font-inter: "Inter", "monospace";
 }
 
+html,
 body {
   margin: 0px;
   padding: 0px;
+  font-family: var(--font-inter);
 }
 
 a {
@@ -13,4 +16,20 @@ a {
   text-decoration: inherit; /* no underline */
   text-decoration-skip: auto;
   display: inline-block;
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/fonts/Inter-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/fonts/Inter-Bold.woff2) format("woff2");
 }
