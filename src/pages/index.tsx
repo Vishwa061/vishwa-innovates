@@ -1,8 +1,24 @@
 import React from "react"
-import { Layout, SEO } from "@/components"
+import {
+  About,
+  Contact,
+  Experience,
+  Intro,
+  Layout,
+  SEO,
+  Solutions,
+} from "@/components"
 
 export default () => {
-  return <Layout> </Layout>
+  return (
+    <Layout>
+      <Intro />
+      <About />
+      <Experience />
+      <Solutions />
+      <Contact />
+    </Layout>
+  )
 }
 
 export const Head = () => <SEO />

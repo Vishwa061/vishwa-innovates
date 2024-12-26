@@ -33,3 +33,11 @@ a {
   font-display: swap;
   src: url(/fonts/Inter-Bold.woff2) format("woff2");
 }
+
+section {
+  background-color: red;
+  padding-bottom: 500px;
+}
+section:not(:last-child) {
+  margin-bottom: 25px;
+}

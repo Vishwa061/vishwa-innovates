@@ -13,7 +13,9 @@ export default ({ children }: LayoutProps) => {
         Skip to main content
       </a>
       <Header />
-      <main id="content">{children}</main>
+      <main id="content" className={classes.main}>
+        {children}
+      </main>
       <Footer />
     </div>
   )
