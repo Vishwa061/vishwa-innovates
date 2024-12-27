@@ -1,20 +1,41 @@
-import React from "react"
+import React, { useState } from "react"
 import * as classes from "./Header.module.scss"
 import { Logo } from "@/components"
 
 export default () => {
-  const sections = [
-    { link: "/#about", text: "About" },
-    { link: "/#experience", text: "Experience" },
-    { link: "/#solutions", text: "Solutions" },
-    { link: "/#contact", text: "Contact" },
-  ]
+  const [sections, setSections] = useState([
+    { link: "/#about", text: "About", isActive: true },
+    { link: "/#experience", text: "Experience", isActive: false },
+    { link: "/#solutions", text: "Solutions", isActive: false },
+    { link: "/#contact", text: "Contact", isActive: false },
+  ])
 
-  const listItems = sections.map((x) => (
-    <li className={classes.navLink} key={x.link}>
-      <a href={x.link}>{x.text}</a>
-    </li>
-  ))
+  const handleNavLinkSelect = (selectedLink: string) => {
+    setSections((prevSections) => {
+      let newSections = [...prevSections]
+
+      newSections.forEach((s) => {
+        s.isActive = s.link === selectedLink
+      })
+
+      return newSections
+    })
+  }
+
+  const listItems = sections.map((x) => {
+    const activeStyle = x.isActive ? classes.active : ""
+    return (
+      <li className={classes.navLink} key={x.link}>
+        <a
+          className={`${classes.navAnchor} ${activeStyle}`}
+          href={x.link}
+          onClick={() => handleNavLinkSelect(x.link)}
+        >
+          {x.text}
+        </a>
+      </li>
+    )
+  })
 
   return (
     <header className={classes.header}>

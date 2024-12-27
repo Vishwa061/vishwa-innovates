@@ -3,7 +3,6 @@ import {
   About,
   Contact,
   Experience,
-  Intro,
   Layout,
   SEO,
   Solutions,
@@ -12,7 +11,6 @@ import {
 export default () => {
   return (
     <Layout>
-      <Intro />
       <About />
       <Experience />
       <Solutions />

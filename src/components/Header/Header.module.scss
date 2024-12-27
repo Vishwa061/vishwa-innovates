@@ -10,7 +10,6 @@
 }
 
 .nav {
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -33,9 +32,18 @@
 }
 
 .nav-link {
+  margin: 0px 5px 0px 5px;
+  border-radius: 5px;
+}
+
+.nav-anchor {
   color: var(--light-text);
   display: block;
-  margin-right: 5px;
-  padding: 10px;
+  padding: 15px;
   font-size: 14px;
+  letter-spacing: 1px;
+}
+
+.active {
+  color: var(--light-blue) !important;
 }

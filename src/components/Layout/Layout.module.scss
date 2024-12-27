@@ -17,9 +17,16 @@
   width: 1px;
   height: 1px;
   overflow: hidden;
+  color: var(--light-blue);
+  background-color: var(--darker-navy-blue);
+  padding: 20px 40px 20px 40px;
+  outline: solid var(--light-blue);
+  border-radius: 0px 5px 5px 0px;
 }
 .skip:focus {
-  position: static;
   width: auto;
   height: auto;
+  left: 0px;
+  top: 20px;
+  z-index: 2000;
 }
