@@ -1,0 +1,44 @@
+.container {
+  padding-top: 150px;
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
+.hi {
+  color: var(--light-blue);
+  display: block;
+  letter-spacing: 1px;
+}
+
+.name {
+  display: block;
+  color: var(--light-text);
+  font-size: var(--scaling-text);
+  font-weight: bold;
+  padding-top: 20px;
+}
+
+.job {
+  display: block;
+  color: var(--dark-text);
+  font-size: var(--scaling-text);
+  font-weight: bold;
+}
+
+.desc {
+  display: block;
+  color: var(--dark-text);
+  max-width: 580px;
+  font-size: 18px;
+}
+
+.company {
+  color: var(--light-blue);
+  display: inline;
+}
+
+.company:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
