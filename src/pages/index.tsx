@@ -13,6 +13,7 @@ export default () => {
     <Layout>
       <About />
       <Experience />
+      <div id="spacer" style={{ paddingTop: "500px" }}></div>
       <Solutions />
       <Contact />
     </Layout>

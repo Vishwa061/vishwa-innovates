@@ -9,7 +9,7 @@ export default () => {
       <span className={classes.job}>I'm a Software Engineer.</span>
       <p className={classes.desc}>
         I specialize in simplifying complex challenges and developing innovative
-        solutions that deliver meaningful impact. In my current role at{" "}
+        solutions that deliver a meaningful impact. In my current role at{" "}
         <a
           href="https://www.citi.com"
           target="_blank"
