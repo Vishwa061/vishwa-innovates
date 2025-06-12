@@ -1,0 +1,16 @@
+.container {
+  padding-top: 10px;
+}
+
+.expsContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.title {
+  color: var(--light-text);
+  width: 100%;
+  text-align: center;
+  font-size: 42px;
+}

@@ -8,7 +8,7 @@ interface LayoutProps {
 
 export default ({ children }: LayoutProps) => {
   return (
-    <div id="root" className={classes.root}>
+    <>
       <a href="#content" className={classes.skip}>
         Skip to main content
       </a>
@@ -17,6 +17,6 @@ export default ({ children }: LayoutProps) => {
         {children}
       </main>
       <Footer />
-    </div>
+    </>
   )
 }
