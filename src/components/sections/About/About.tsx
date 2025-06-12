@@ -17,8 +17,8 @@ export default () => {
         >
           Citi
         </a>
-        , I design, maintain, and enhance data pipelines & microservices in the
-        Equities sector.
+        , I build, maintain, and enhance data pipelines & microservices in the
+        equities sector.
       </p>
     </section>
   )
