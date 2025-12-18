@@ -34,14 +34,19 @@
   margin-top: 10px;
 }
 
-.desc {
+.desc-list {
   border-radius: 10px;
   background-color: var(--titanium-blue);
-  padding: 20px;
+  padding: 20px 30px;
   color: var(--light-text);
   font-size: 16px;
   letter-spacing: 0.5px;
   margin: 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  list-style-position: outside;
+  list-style-type: disc;
 }
 
 .tag-container {
