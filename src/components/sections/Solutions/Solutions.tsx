@@ -1,9 +1,10 @@
 import React from "react"
+import * as classes from "./Solutions.module.scss"
 
 export default () => {
   return (
-    <section id="solutions">
-      <h2>Solutions</h2>
+    <section id="solutions" className={classes.container}>
+      <h2 className={classes.title}>Solutions</h2>
     </section>
   )
 }
