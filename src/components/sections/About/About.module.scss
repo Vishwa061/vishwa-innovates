@@ -1,15 +1,18 @@
 .container {
   padding: 80px 100px 150px 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
 }
 
 .hi {
   color: var(--light-blue);
-  display: block;
   letter-spacing: 1px;
 }
 
 .name {
-  display: block;
   color: var(--light-text);
   font-size: var(--scaling-text);
   font-weight: bold;
@@ -17,14 +20,19 @@
 }
 
 .job {
-  display: block;
   color: var(--dark-text);
   font-size: var(--scaling-text);
   font-weight: bold;
 }
 
+.motto {
+  color: var(--lighter-blue);
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
 .desc {
-  display: block;
   color: var(--dark-text);
   max-width: 600px;
   font-size: 16px;
