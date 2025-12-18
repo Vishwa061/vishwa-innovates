@@ -13,15 +13,14 @@ export default () => {
       logo: citiLogo,
       location: "Mississauga, Ontario, Canada",
       desc: [
-        "Maintained and developed the front end of a data quality and controls app using Citi’s standard UI library (Angular/TypeScript)",
-        "Built the front end for an innovative data quality app which used generative AI for rule creation",
+        "Maintained and developed the front end of a data quality and controls app using Citi's standard UI library",
         "Revamped the UI & constructed the API of a team hackathon project which was approved for further development",
       ],
       tags: ["Angular", "TypeScript", "Generative AI", "UI"],
     },
     {
       roleInfo: "Full Stack Engineer",
-      roleInterval: "June 2021 – Aug 2022; Jan 2023 – June 2023",
+      roleInterval: "June 2021 - Aug 2022; Jan 2023 - June 2023",
       company: "MRS Company",
       logo: mrsLogo,
       location: "Toronto, Ontario, Canada",
@@ -33,7 +32,14 @@ export default () => {
         "Introduced best practices and methodologies that improved product definition and provided customization of applications to meet client needs",
         "Wrote SQL stored procedures to optimize client app core feature performance from hours to seconds",
       ],
-      tags: ["React", "TypeScript", ".NET Core", "Entity Framework", "Azure DevOps", "SQL"],
+      tags: [
+        "React",
+        "TypeScript",
+        ".NET Core",
+        "Entity Framework",
+        "Azure DevOps",
+        "SQL",
+      ],
     },
   ]
 
