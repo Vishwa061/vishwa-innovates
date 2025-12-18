@@ -1,5 +1,5 @@
 import React from "react"
-import pocketFlowLogo from "@/images/pocket-flow.svg"
+import pocketFlowLogo from "@/images/pocket-flow.png"
 import * as classes from "./Solutions.module.scss"
 
 const solutions = [
