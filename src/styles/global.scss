@@ -1,6 +1,7 @@
 :root {
   --dark-navy-blue: #091a2a;
   --darker-navy-blue: #091621;
+  --section-alt-blue: #0c2236;
   --light-blue: #38bdf8;
   --lighter-blue: #67c9f4;
   --titanium-blue: #003459;
@@ -19,6 +20,22 @@ body {
   padding: 0px;
   font-family: var(--font-inter);
   background-color: var(--dark-navy-blue);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+main section {
+  box-sizing: border-box;
+  min-height: calc(100vh - 100px);
+  padding: 80px 100px;
+  background-color: var(--dark-navy-blue);
+}
+
+main section:nth-of-type(even) {
+  background-color: var(--section-alt-blue);
 }
 
 a {
