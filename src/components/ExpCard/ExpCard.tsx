@@ -7,7 +7,7 @@ export interface ExpCardProps {
   company: string
   logo: any
   location: string
-  desc: string
+  desc: string[]
   tags: string[]
 }
 
@@ -21,8 +21,11 @@ export default ({
   tags,
 }: ExpCardProps) => {
   const parsedTags = tags.map((tag) => (
-    <span className={classes.tag}>{tag}</span>
+    <span className={classes.tag} key={tag}>
+      {tag}
+    </span>
   ))
+  const parsedDesc = desc.map((descItem) => <li key={descItem}>{descItem}</li>)
 
   return (
     <div className={classes.container}>
@@ -35,7 +38,7 @@ export default ({
         <h3 className={classes.company}>{company}</h3>
         <span className={classes.location}>{location}</span>
         <div className={classes.descContainer}>
-          <p className={classes.desc}>{desc}</p>
+          <ul className={classes.descList}>{parsedDesc}</ul>
         </div>
         <div className={classes.tagContainer}>{parsedTags}</div>
       </div>
