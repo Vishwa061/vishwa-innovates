@@ -19,14 +19,14 @@ export default () => {
         "Delivered low-latency, high-throughput connectivity solutions that unify message formats and optimize order and market-data flows across trading venues",
       ],
       tags: [
-        "Angular",
-        "TypeScript",
         "Java",
-        "Python",
         "FIX Protocol",
         "Low-Latency Systems",
         "Exchange Connectivity",
+        "Python",
         "Shell Scripting",
+        "Angular",
+        "TypeScript",
       ],
     },
     {
