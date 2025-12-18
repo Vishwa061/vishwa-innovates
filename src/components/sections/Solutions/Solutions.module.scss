@@ -38,17 +38,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, #0b1f33 0%, #0c2236 100%);
+  // background: linear-gradient(180deg, #0b1f33 0%, #0c2236 100%);
   border-radius: 12px;
   padding: 16px;
   box-sizing: border-box;
+  overflow: hidden;
+  background: var(--titanium-blue);
 }
 
 .image {
   width: 100%;
-  max-width: 260px;
   height: auto;
   object-fit: contain;
+  border-radius: 8px;
+  display: block;
+  background: var(--pocket-flow-blue);
 }
 
 .content {
