@@ -26,10 +26,11 @@
 }
 
 .motto {
-  color: var(--lighter-blue);
-  font-size: 18px;
+  color: var(--light-blue);
+  font-size: var(--scaling-text);
+  font-style: italic;
   letter-spacing: 1px;
-  text-transform: uppercase;
+  margin-top: 30px;
 }
 
 .desc {
