@@ -15,8 +15,19 @@ export default () => {
       desc: [
         "Maintained and developed the front end of a data quality and controls app using Citi's standard UI library",
         "Revamped the UI & constructed the API of a team hackathon project which was approved for further development",
+        "Built robust protocol translation layers that seamlessly bridge FIX, binary, and cross-version FIX integrations, enabling effortless connectivity to global exchanges",
+        "Delivered low-latency, high-throughput connectivity solutions that unify message formats and optimize order and market-data flows across trading venues",
       ],
-      tags: ["Angular", "TypeScript", "Generative AI", "UI"],
+      tags: [
+        "Angular",
+        "TypeScript",
+        "Java",
+        "Python",
+        "FIX Protocol",
+        "Low-Latency Systems",
+        "Exchange Connectivity",
+        "Shell Scripting",
+      ],
     },
     {
       roleInfo: "Full Stack Engineer",
