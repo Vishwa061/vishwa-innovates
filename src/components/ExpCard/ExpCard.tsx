@@ -28,23 +28,33 @@ export default ({
   const parsedDesc = desc.map((descItem) => <li key={descItem}>{descItem}</li>)
 
   return (
-    <div className={classes.container}>
-      <div className={classes.details}>
-        <div className={classes.roleInfo}>
-          {roleInfo}
-          {" · "}
-          <span className={classes.roleInterval}>{roleInterval}</span>
-        </div>
-        <h3 className={classes.company}>{company}</h3>
-        <span className={classes.location}>{location}</span>
-        <div className={classes.descContainer}>
-          <ul className={classes.descList}>{parsedDesc}</ul>
-        </div>
-        <div className={classes.tagContainer}>{parsedTags}</div>
+    <article className={classes.card}>
+      <div className={classes.preview}>
+        <img
+          className={classes.logo}
+          src={logo}
+          alt={`${company} logo`}
+          loading="lazy"
+        />
       </div>
-      <div className={classes.logoContainer}>
-        <img className={classes.logo} src={logo} alt="Company Logo" />
+      <div className={classes.content}>
+        <div className={classes.heading}>
+          <div>
+            <h3 className={classes.company}>{company}</h3>
+            <p className={classes.roleInfo}>
+              {roleInfo}
+              {" · "}
+              <span className={classes.roleInterval}>{roleInterval}</span>
+            </p>
+            <p className={classes.location}>{location}</p>
+          </div>
+          <div className={classes.tags}>{parsedTags}</div>
+        </div>
+        <div className={classes.featureBlock}>
+          <h4 className={classes.featureTitle}>Highlights</h4>
+          <ul className={classes.featureList}>{parsedDesc}</ul>
+        </div>
       </div>
-    </div>
+    </article>
   )
 }
