@@ -32,32 +32,26 @@ export default () => {
       return undefined
     }
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visibleEntries = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
-
-        if (visibleEntries.length === 0) {
-          return
-        }
-
-        const currentId = visibleEntries[0].target.id
-        setActiveSection((prev) => (prev === currentId ? prev : currentId))
-      },
-      {
-        rootMargin: "-30% 0px -50% 0px",
-        threshold: [0.25, 0.5, 0.75],
-      }
-    )
-
     const elements = NAV_SECTIONS.map(({ id }) =>
       document.getElementById(id)
     ).filter((section): section is HTMLElement => Boolean(section))
 
-    elements.forEach((section) => observer.observe(section))
+    const handleScroll = () => {
+      const focusPoint = window.scrollY + window.innerHeight / 3
+      const currentSection = elements
+        .filter((section) => section.offsetTop <= focusPoint)
+        .sort((a, b) => b.offsetTop - a.offsetTop)[0]
 
-    return () => observer.disconnect()
+      const nextActiveId =
+        currentSection?.id ?? elements[0]?.id ?? NAV_SECTIONS[0].id
+
+      setActiveSection((prev) => (prev === nextActiveId ? prev : nextActiveId))
+    }
+
+    handleScroll()
+    window.addEventListener("scroll", handleScroll, { passive: true })
+
+    return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
   const listItems = NAV_SECTIONS.map((section) => {
