@@ -13,6 +13,7 @@ const NAV_SECTIONS = [
 export default () => {
   const location = useLocation()
   const [activeSection, setActiveSection] = useState(NAV_SECTIONS[0].id)
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     if (!location.hash) {
@@ -25,6 +26,8 @@ export default () => {
     if (NAV_SECTIONS.some((section) => section.id === sectionId)) {
       setActiveSection(sectionId)
     }
+
+    setIsMenuOpen(false)
   }, [location])
 
   useEffect(() => {
@@ -56,11 +59,14 @@ export default () => {
 
   const listItems = NAV_SECTIONS.map((section) => {
     const activeStyle = section.id === activeSection ? classes.active : ""
+    const closeMenu = () => setIsMenuOpen(false)
+
     return (
       <li className={classes.navLink} key={section.id}>
         <a
           className={`${classes.navAnchor} ${activeStyle}`}
           href={`/#${section.id}`}
+          onClick={closeMenu}
         >
           {section.text}
         </a>
@@ -73,7 +79,22 @@ export default () => {
       <nav className={classes.nav}>
         <Logo />
         <div className={classes.navRightContainer}>
-          <ol className={classes.navLinksContainer}>{listItems}</ol>
+          <button
+            type="button"
+            aria-expanded={isMenuOpen}
+            aria-label="Toggle navigation menu"
+            className={classes.menuButton}
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span className={classes.menuIcon} aria-hidden="true" />
+          </button>
+          <ol
+            className={`${classes.navLinksContainer} ${
+              isMenuOpen ? classes.navLinksOpen : ""
+            }`}
+          >
+            {listItems}
+          </ol>
         </div>
       </nav>
     </header>

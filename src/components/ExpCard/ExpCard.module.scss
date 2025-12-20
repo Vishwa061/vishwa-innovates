@@ -130,3 +130,31 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .preview {
+    min-width: 0;
+    padding: 12px;
+  }
+
+  .company {
+    font-size: 22px;
+  }
+
+  .roleInfo {
+    font-size: 15px;
+  }
+
+  .featureBlock {
+    padding: 10px 12px;
+  }
+
+  .featureList {
+    gap: 6px;
+  }
+}

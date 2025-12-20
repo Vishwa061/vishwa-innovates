@@ -11,3 +11,9 @@
   margin: 0;
   font-size: 14px;
 }
+
+@media screen and (max-width: 600px) {
+  .footer {
+    padding: 16px 24px;
+  }
+}

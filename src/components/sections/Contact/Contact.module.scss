@@ -49,3 +49,32 @@
   font-size: 16px;
   color: currentColor;
 }
+
+@media screen and (max-width: 900px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    gap: 24px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .card {
+    padding: 16px 18px;
+    gap: 12px;
+  }
+
+  .label {
+    font-size: 17px;
+  }
+
+  .value {
+    font-size: 15px;
+  }
+}
