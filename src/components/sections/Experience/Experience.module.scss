@@ -19,3 +19,19 @@
   flex-direction: column;
   gap: 20px;
 }
+
+@media screen and (max-width: 900px) {
+  .title {
+    font-size: 32px;
+  }
+
+  .container {
+    gap: 26px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .title {
+    font-size: 28px;
+  }
+}

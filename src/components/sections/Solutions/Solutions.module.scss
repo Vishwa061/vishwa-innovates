@@ -146,3 +146,32 @@
     width: 100%;
   }
 }
+
+@media screen and (max-width: 900px) {
+  .title {
+    font-size: 32px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 16px;
+    gap: 16px;
+  }
+
+  .title {
+    font-size: 28px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .feature-block {
+    padding: 10px 12px;
+  }
+
+  .feature-list {
+    gap: 6px;
+  }
+}

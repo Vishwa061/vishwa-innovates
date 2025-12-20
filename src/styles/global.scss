@@ -9,7 +9,7 @@
   --light-text: #dededeee;
   --dark-text: #939cb9;
   --font-inter: "Inter";
-  --scaling-text: clamp(40px, 8vw, 80px);
+  --scaling-text: clamp(36px, 7vw, 80px);
 }
 
 html {
@@ -31,7 +31,7 @@ main {
 main section {
   box-sizing: border-box;
   min-height: calc(100vh - 100px);
-  padding: 80px 100px;
+  padding: clamp(56px, 8vw, 80px) clamp(20px, 8vw, 100px);
   background-color: var(--dark-navy-blue);
 }
 

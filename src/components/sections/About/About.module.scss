@@ -50,3 +50,38 @@
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 }
+
+@media screen and (max-width: 900px) {
+  .container {
+    padding: 70px 48px 120px;
+    gap: 14px;
+  }
+
+  .name,
+  .job,
+  .motto {
+    font-size: clamp(32px, 8vw, 64px);
+  }
+
+  .motto {
+    margin-top: 64px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    padding: 60px 24px 90px;
+  }
+
+  .hi {
+    font-size: 14px;
+  }
+
+  .desc {
+    font-size: 15px;
+  }
+
+  .motto {
+    margin-top: 40px;
+  }
+}
