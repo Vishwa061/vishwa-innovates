@@ -8,6 +8,7 @@ const solutions = [
     subtitle: "Android budgeting app built with Jetpack Compose",
     description:
       "Pocket Flow keeps budgeting fully offline by persisting all user data as JSON in internal storage—no databases or network required.",
+    link: "https://play.google.com/store/apps/details?id=com.pocketflow",
     features: [
       "Capture expenses with names, prices, categories, and dates",
       "Flexible recurrences: daily, weekly (with weekday selection), monthly, and yearly—similar to calendar events",
@@ -52,6 +53,18 @@ export default () => {
                 </div>
               </div>
               <p className={classes.description}>{solution.description}</p>
+              {solution.link && (
+                <div className={classes.actions}>
+                  <a
+                    href={solution.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={classes.link}
+                  >
+                    View on Google Play
+                  </a>
+                </div>
+              )}
               <div className={classes.featureBlock}>
                 <h4 className={classes.featureTitle}>Highlights</h4>
                 <ul className={classes.featureList}>
