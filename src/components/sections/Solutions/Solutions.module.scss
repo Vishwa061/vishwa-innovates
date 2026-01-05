@@ -127,6 +127,39 @@
   line-height: 1.6;
 }
 
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  background-color: var(--lighter-blue);
+  color: var(--titanium-blue);
+  font-weight: 700;
+  border: 1px solid var(--light-blue);
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.35);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s ease;
+}
+
+.link:hover {
+  transform: translateY(-1px);
+  background-color: rgba(56, 189, 248, 0.85);
+  box-shadow: 0 12px 30px rgba(56, 189, 248, 0.45);
+}
+
+.link:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(56, 189, 248, 0.3);
+}
+
 @media screen and (max-width: 900px) {
   .card {
     flex-direction: column;
