@@ -1,41 +1,48 @@
 import React from "react"
+import { contactContent, contactMethods } from "@/content/portfolio"
 import * as classes from "./Contact.module.scss"
 
 export default () => {
-  const contactMethods = [
-    {
-      label: "GitHub",
-      href: "https://github.com/Vishwa061",
-      value: "https://github.com/Vishwa061",
-    },
-    {
-      label: "LinkedIn",
-      href: "https://www.linkedin.com/in/vishwa-perera",
-      value: "https://www.linkedin.com/in/vishwa-perera",
-    },
-    {
-      label: "Email",
-      href: "mailto:vishwainnovates@gmail.com",
-      value: "vishwainnovates@gmail.com",
-    },
-  ]
-
   return (
     <section id="contact" className={classes.container}>
-      <h2 className={classes.title}>Contact Me</h2>
-      <div className={classes.cards}>
-        {contactMethods.map((contact) => (
-          <a
-            href={contact.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className={classes.card}
-            key={contact.label}
-          >
-            <span className={classes.label}>{contact.label}</span>
-            <span className={classes.value}>{contact.value}</span>
-          </a>
-        ))}
+      <div className={classes.shell}>
+        <div className={classes.header}>
+          <span className={classes.eyebrow}>{contactContent.eyebrow}</span>
+          <h2 className={classes.title}>{contactContent.title}</h2>
+          <p className={classes.description}>{contactContent.description}</p>
+
+          <div className={classes.actions}>
+            <a
+              href={contactContent.primaryAction.href}
+              className={`${classes.action} ${classes.primaryAction}`}
+            >
+              {contactContent.primaryAction.label}
+            </a>
+            <a
+              href={contactContent.secondaryAction.href}
+              target="_blank"
+              rel="noreferrer"
+              className={`${classes.action} ${classes.secondaryAction}`}
+            >
+              {contactContent.secondaryAction.label}
+            </a>
+          </div>
+        </div>
+
+        <div className={classes.cards}>
+          {contactMethods.map((contact) => (
+            <a
+              href={contact.href}
+              target={contact.external ? "_blank" : undefined}
+              rel={contact.external ? "noopener noreferrer" : undefined}
+              className={classes.card}
+              key={contact.label}
+            >
+              <span className={classes.label}>{contact.label}</span>
+              <span className={classes.value}>{contact.value}</span>
+            </a>
+          ))}
+        </div>
       </div>
     </section>
   )

@@ -1,79 +1,107 @@
 import React from "react"
-import pocketFlowLogo from "@/images/pocket-flow.png"
+import { featuredProject, supportingHighlights } from "@/content/portfolio"
 import * as classes from "./Solutions.module.scss"
-
-const solutions = [
-  {
-    name: "Pocket Flow",
-    subtitle: "Android budgeting app built with Jetpack Compose",
-    description:
-      "Pocket Flow keeps budgeting fully offline by persisting all user data as JSON in internal storage—no databases or network required.",
-    link: "https://play.google.com/store/apps/details?id=com.pocketflow",
-    features: [
-      "Capture expenses with names, prices, categories, and dates",
-      "Flexible recurrences: daily, weekly (with weekday selection), monthly, and yearly—similar to calendar events",
-      "Overview screen that expands recurrences to summarize spend by week, month, year, and next year",
-      "Category management with default icons, add/edit/remove options, and safeguards when expenses exist",
-      "Category pie chart that visualizes spend distribution with percentages and icons",
-      "List view dedicated to recurring expenses for quick reviews",
-    ],
-    tags: ["Android", "Jetpack Compose", "Kotlin", "Offline JSON storage"],
-    image: pocketFlowLogo,
-    imageAlt: "Pocket Flow app logo featuring a pocket holding a dollar bill",
-  },
-]
 
 export default () => {
   return (
-    <section id="solutions" className={classes.container}>
-      <h2 className={classes.title}>Solutions</h2>
-      <div className={classes.cards}>
-        {solutions.map((solution) => (
-          <article className={classes.card} key={solution.name}>
-            <div className={classes.preview}>
-              <img
-                src={solution.image}
-                alt={solution.imageAlt}
-                className={classes.image}
-                loading="lazy"
-              />
-            </div>
-            <div className={classes.content}>
-              <div className={classes.heading}>
-                <div>
-                  <h3 className={classes.name}>{solution.name}</h3>
-                  <p className={classes.subtitle}>{solution.subtitle}</p>
-                </div>
-                <div className={classes.tags}>
-                  {solution.tags.map((tag) => (
-                    <span className={classes.tag} key={tag}>
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+    <section id="work" className={classes.container}>
+      <div className={classes.header}>
+        <span className={classes.eyebrow}>Selected Work</span>
+        <h2 className={classes.title}>
+          Case study depth where it matters most.
+        </h2>
+        <p className={classes.description}>
+          I prefer projects that solve concrete user problems with clear
+          tradeoffs. Pocket Flow is the clearest example in this portfolio: a
+          focused product with deliberate technical constraints and practical UX
+          decisions.
+        </p>
+      </div>
+
+      <article className={classes.featuredCard}>
+        <div className={classes.preview}>
+          <img
+            src={featuredProject.image}
+            alt={featuredProject.imageAlt}
+            className={classes.image}
+            loading="lazy"
+          />
+
+          <div className={classes.metricGrid}>
+            {featuredProject.metrics.map((metric) => (
+              <div className={classes.metricCard} key={metric.label}>
+                <span className={classes.metricLabel}>{metric.label}</span>
+                <span className={classes.metricValue}>{metric.value}</span>
               </div>
-              <p className={classes.description}>{solution.description}</p>
-              {solution.link && (
-                <div className={classes.actions}>
-                  <a
-                    href={solution.link}
-                    target="_blank"
-                    rel="noreferrer"
-                    className={classes.link}
-                  >
-                    View on Google Play
-                  </a>
-                </div>
-              )}
-              <div className={classes.featureBlock}>
-                <h4 className={classes.featureTitle}>Highlights</h4>
-                <ul className={classes.featureList}>
-                  {solution.features.map((feature) => (
-                    <li key={feature}>{feature}</li>
-                  ))}
-                </ul>
-              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className={classes.content}>
+          <div className={classes.heading}>
+            <div>
+              <span className={classes.projectEyebrow}>Featured project</span>
+              <h3 className={classes.name}>{featuredProject.name}</h3>
+              <p className={classes.subtitle}>{featuredProject.subtitle}</p>
             </div>
+
+            <div className={classes.tags}>
+              {featuredProject.tags.map((tag) => (
+                <span className={classes.tag} key={tag}>
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <p className={classes.projectDescription}>
+            {featuredProject.description}
+          </p>
+
+          <div className={classes.storyGrid}>
+            <div className={classes.storyBlock}>
+              <h4>The problem</h4>
+              <p>{featuredProject.challenge}</p>
+            </div>
+            <div className={classes.storyBlock}>
+              <h4>Approach</h4>
+              <p>{featuredProject.approach}</p>
+            </div>
+            <div className={classes.storyBlock}>
+              <h4>Outcome</h4>
+              <p>{featuredProject.outcome}</p>
+            </div>
+          </div>
+
+          <div className={classes.featureBlock}>
+            <h4 className={classes.featureTitle}>Implementation highlights</h4>
+            <ul className={classes.featureList}>
+              {featuredProject.features.map((feature) => (
+                <li key={feature}>{feature}</li>
+              ))}
+            </ul>
+          </div>
+
+          <div className={classes.actions}>
+            <a
+              href={featuredProject.link}
+              target="_blank"
+              rel="noreferrer"
+              className={classes.link}
+            >
+              {featuredProject.linkLabel}
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <div className={classes.supportGrid}>
+        {supportingHighlights.map((highlight) => (
+          <article className={classes.supportCard} key={highlight.title}>
+            <h3 className={classes.supportTitle}>{highlight.title}</h3>
+            <p className={classes.supportDescription}>
+              {highlight.description}
+            </p>
           </article>
         ))}
       </div>

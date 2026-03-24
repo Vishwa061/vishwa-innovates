@@ -1,29 +1,21 @@
 import React, { useEffect, useState } from "react"
-import * as classes from "./Header.module.scss"
-import { Logo } from "@/components"
 import { useLocation } from "@reach/router"
-
-const NAV_SECTIONS = [
-  { id: "about", text: "About" },
-  { id: "experience", text: "Experience" },
-  { id: "solutions", text: "Solutions" },
-  { id: "contact", text: "Contact" },
-]
+import { Logo } from "@/components"
+import { navSections, siteOwner } from "@/content/portfolio"
+import * as classes from "./Header.module.scss"
 
 export default () => {
   const location = useLocation()
-  const [activeSection, setActiveSection] = useState(NAV_SECTIONS[0].id)
+  const [activeSection, setActiveSection] = useState(navSections[0].id)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
     if (!location.hash) {
-      window.scrollTo(0, 0)
-      setActiveSection(NAV_SECTIONS[0].id)
-      return
+      setActiveSection(navSections[0].id)
     }
 
     const sectionId = location.hash.replace("#", "")
-    if (NAV_SECTIONS.some((section) => section.id === sectionId)) {
+    if (navSections.some((section) => section.id === sectionId)) {
       setActiveSection(sectionId)
     }
 
@@ -35,9 +27,9 @@ export default () => {
       return undefined
     }
 
-    const elements = NAV_SECTIONS.map(({ id }) =>
-      document.getElementById(id)
-    ).filter((section): section is HTMLElement => Boolean(section))
+    const elements = navSections
+      .map(({ id }) => document.getElementById(id))
+      .filter((section): section is HTMLElement => Boolean(section))
 
     const handleScroll = () => {
       const focusPoint = window.scrollY + window.innerHeight / 3
@@ -46,7 +38,7 @@ export default () => {
         .sort((a, b) => b.offsetTop - a.offsetTop)[0]
 
       const nextActiveId =
-        currentSection?.id ?? elements[0]?.id ?? NAV_SECTIONS[0].id
+        currentSection?.id ?? elements[0]?.id ?? navSections[0].id
 
       setActiveSection((prev) => (prev === nextActiveId ? prev : nextActiveId))
     }
@@ -57,27 +49,19 @@ export default () => {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const listItems = NAV_SECTIONS.map((section) => {
-    const activeStyle = section.id === activeSection ? classes.active : ""
-    const closeMenu = () => setIsMenuOpen(false)
-
-    return (
-      <li className={classes.navLink} key={section.id}>
-        <a
-          className={`${classes.navAnchor} ${activeStyle}`}
-          href={`/#${section.id}`}
-          onClick={closeMenu}
-        >
-          {section.text}
-        </a>
-      </li>
-    )
-  })
+  const closeMenu = () => setIsMenuOpen(false)
 
   return (
     <header className={classes.header}>
       <nav className={classes.nav}>
-        <Logo />
+        <div className={classes.brand}>
+          <Logo />
+          <span className={classes.brandCopy}>
+            <span className={classes.brandName}>{siteOwner.name}</span>
+            <span className={classes.brandRole}>{siteOwner.role}</span>
+          </span>
+        </div>
+
         <div className={classes.navRightContainer}>
           <button
             type="button"
@@ -88,13 +72,38 @@ export default () => {
           >
             <span className={classes.menuIcon} aria-hidden="true" />
           </button>
-          <ol
-            className={`${classes.navLinksContainer} ${
-              isMenuOpen ? classes.navLinksOpen : ""
+
+          <div
+            className={`${classes.navPanel} ${
+              isMenuOpen ? classes.navPanelOpen : ""
             }`}
           >
-            {listItems}
-          </ol>
+            <ol className={classes.navLinksContainer}>
+              {navSections.map((section) => {
+                const activeStyle =
+                  section.id === activeSection ? classes.active : ""
+
+                return (
+                  <li className={classes.navLink} key={section.id}>
+                    <a
+                      className={`${classes.navAnchor} ${activeStyle}`}
+                      href={`/#${section.id}`}
+                      aria-current={
+                        section.id === activeSection ? "page" : undefined
+                      }
+                      onClick={closeMenu}
+                    >
+                      {section.label}
+                    </a>
+                  </li>
+                )
+              })}
+            </ol>
+
+            <a href="/#contact" className={classes.cta} onClick={closeMenu}>
+              Get in touch
+            </a>
+          </div>
         </div>
       </nav>
     </header>

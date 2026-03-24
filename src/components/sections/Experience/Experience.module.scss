@@ -1,37 +1,39 @@
 .container {
-  width: 100%;
+  width: min(var(--content-max-width), 100%);
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 32px;
+  gap: 28px;
+}
+
+.header {
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--accent);
 }
 
 .title {
-  color: var(--light-text);
-  width: 100%;
-  text-align: center;
-  font-size: 42px;
+  margin: 14px 0 14px;
+  font-size: clamp(2.1rem, 4vw, 3.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
 }
 
-.expsContainer {
-  width: 100%;
+.description {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 1.03rem;
+}
+
+.exps-container {
   display: flex;
   flex-direction: column;
   gap: 20px;
-}
-
-@media screen and (max-width: 900px) {
-  .title {
-    font-size: 32px;
-  }
-
-  .container {
-    gap: 26px;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .title {
-    font-size: 28px;
-  }
 }

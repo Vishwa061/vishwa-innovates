@@ -2,16 +2,13 @@ import type { GatsbyConfig } from "gatsby"
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: "Vishwa Perera",
+    title: "Vishwa Perera | Software Engineer",
     description:
-      "Vishwa Perera is a software engineer who builds simple solutions for complex problems.",
+      "Portfolio website for Vishwa Perera, a software engineer building dependable systems, internal tools, and practical product experiences across capital markets and full-stack applications.",
     twitterUsername: "@VishwaP25503843",
-    image: "/images/logo.png", // refers to files in static folder
+    image: "/images/logo.png",
     siteUrl: "https://www.vishwainnovates.com",
   },
-  // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
-  // If you use VSCode you can also use the GraphQL plugin
-  // Learn more at: https://gatsby.dev/graphql-typegen
   graphqlTypegen: true,
   plugins: [
     "gatsby-plugin-tsconfig-paths",
@@ -27,7 +24,13 @@ const config: GatsbyConfig = {
     {
       resolve: "gatsby-plugin-manifest",
       options: {
-        icon: "src/images/icon.png", // this is what shows as the browser icon, should be 512x512
+        name: "Vishwa Perera Portfolio",
+        short_name: "Vishwa",
+        start_url: "/",
+        background_color: "#08111d",
+        theme_color: "#08111d",
+        display: "standalone",
+        icon: "src/images/icon-square.png",
       },
     },
     "gatsby-plugin-sharp",

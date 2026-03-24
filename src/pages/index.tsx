@@ -8,7 +8,7 @@ import {
   Solutions,
 } from "@/components"
 
-export default () => {
+const IndexPage = () => {
   return (
     <Layout>
       <About />
@@ -19,4 +19,6 @@ export default () => {
   )
 }
 
-export const Head = () => <SEO />
+export default IndexPage
+
+export const Head = () => <SEO pathname="/" />
